@@ -1,27 +1,19 @@
+// Yo, this is a helper function for handling async requests and errors in a clean way.
 const asyncHandler = (requestHandler) => {
-    (req,res,next) => {
-        Promise.resolve(requestHandler(req,res,next)).
-        catch((err) => next(err))
-    }
+    // Return an async middleware function that wraps the request handler
+    return (req, res, next) => {
+        // Make sure the request handler returns a promise
+        Promise.resolve(requestHandler(req, res, next))
+            .catch((err) => next(err)); // If the request handler throws an error, pass it to the next error handler
+    };
+};
 
-}
+export { asyncHandler };
 
+// Different ways you could define the asyncHandler (but the above one is the best for clarity):
+// const asyncHandler = () => {};         // Empty function (not useful here)
+// const asyncHandler = (func) => {};     // Can also pass a function, but not as clear as the above
+// const asyncHandler = (func) => async () => {}; // Another approach, but can get confusing
 
-export{asyncHandler}
-
-// const asyncHandler = () => {}
-// const asyncHandler = (func) => {}
-// const asyncHandler = (func) =>  async () => {}
-
-
-// const asyncHandler = (fn) =>  async(req,res,next) => {
-//     try {
-//         await fn(req,re,next)
-        
-//     } catch (error) {
-//         res.status(err.code || 401.json({
-//             success: false,
-//             message: err.message
-//         }))
-//     }
-// }
+// Here's a more refined version using async/await to handle errors better
+// const asyncHandle
