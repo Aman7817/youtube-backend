@@ -1,5 +1,11 @@
+
 // Importing mongoose to connect to MongoDB and DB_NAME from constants for the database name
+
 import mongoose from "mongoose";
+
+
+
+
 import { DB_NAME } from "../constants.js";  // DB_NAME is the name of the MongoDB database
 
 // Function to connect to MongoDB, returning a promise that resolves when the connection is established

@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 
 // Importing the function to connect to the MongoDB database (you probably defined this elsewhere)
 import connectDB from "./db/index.js";
+import {app} from './app.js'
 
 // Load environment variables from './env' file
 dotenv.config({

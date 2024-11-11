@@ -30,5 +30,17 @@ app.use(express.static('public')); // 'kuch bhe images ya or kuch bhe rakh ne ke
 // Middleware to parse cookies from incoming requests
 app.use(cookieParser()); // To access cookies sent by the client in `req.cookies`
 
+
+// routes import 
+
+import  userRouter  from './routes/user.routes.js'
+
+
+/// rouets declaration 
+app.use("/api/v1/users",userRouter)
+
+
+// http://localhost:8000/api/v1/users/register
+
 // Export the app so it can be used in other files (e.g., for routing or starting the server)
 export { app };
