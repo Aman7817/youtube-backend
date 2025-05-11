@@ -28,7 +28,7 @@ class ApiError extends Error {
         } else {
             Error.captureStackTrace(this, this.constructor); // Automatically capture the stack trace
         }
-    } // This part is for custom error handling. You can add more details if needed.
+    } // This part is for custom error handling.
 }
 
 // Export the ApiError class so we can use it elsewhere

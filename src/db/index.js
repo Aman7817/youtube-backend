@@ -19,7 +19,7 @@ const connectDB = async () => {
 
         // If the connection is successful, log the host of the MongoDB server
         // This gives us information about where the MongoDB instance is hosted (useful for debugging and monitoring).
-        console.log(`MongoDB connected! DB HOST: ${connectionInstance.connection.host}`);
+        console.log(`\n MongoDB connected !! DB HOST: ${connectionInstance.connection.host}`);
 
     } catch (error) {
         // If there's an error (e.g., invalid connection URI, unreachable server), this block catches it

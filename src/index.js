@@ -39,7 +39,7 @@ const app = express(); // Set up express app
 (async () => {
     try {
         // Try to connect to the MongoDB using the URI stored in the environment variable
-        await mongoose.connect(`${process.env.MONGODB_URI}`);
+        await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`);
 
         // Handling server errors (e.g., connection issues or any internal errors)
         app.on("error", (error) => {
